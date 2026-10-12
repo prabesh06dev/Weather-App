@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <main class="weather-app">
+        <h1>Weather App 🌦️</h1>
+        <p class="subtitle">Find the weather in your city</p>
+
+        <form id="weather-form">
+            <input
+                type="text"
+                id="city-input"
+                placeholder="Enter a city, e.g. Kathmandu"
+                aria-label="City name"
+                required
+            >
+            <button type="submit">Search</button>
+        </form>
+
+        <button type="button" id="location-button" class="location-button">
+            Use My Location
+        </button>
+
+        <p id="message" role="status" aria-live="polite">Search for a city to see its weather.</p>
+        <button type="button" id="refresh-button" class="refresh-button" hidden>
+            Refresh Weather
+        </button>
+
+        <section id="weather-result" class="weather-result" hidden>
+            <h2 id="city-name"></h2>
+            <p id="temperature"></p>
+            <div class="temperature-toggle">
+                <button type="button" id="celsius-button" class="unit-button active">
+                    °C
+                </button>
+                <button type="button" id="fahrenheit-button" class="unit-button">
+                    °F
+                </button>
+            </div>
+            <p id="description"></p>
+            <p id="humidity"></p>
+            <p id="wind"></p>
+        </section>
+        <section id ="forecast-section" hidden>
+            <h2 class ="forecast-title">5-Day Forecast</h2>
+            <div id="forecast-container" class="forecast-container"></div>
+        </section>
+    </main>
+    
+        <section id="recent-section" class="recent-section" hidden>
+            <h2>Recent Searches</h2>
+            <div id="recent-cities" class="recent-cities"></div>
+        </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
